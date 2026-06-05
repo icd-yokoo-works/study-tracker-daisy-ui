@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { client } from "@/lib/client";
+import {formatToJST} from "@/lib/date"
 
 export async function generateStaticParams() {
   const data = await client.get({ endpoint: "blogs" });
@@ -29,7 +30,9 @@ export default async function BlogId({ params }: { params: Promise<{ slug: strin
   return (
     <main>
       <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <p>{formatToJST(blog.publishedAt)}</p>
+      <div className="">{blog.category.id}</div>
+
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.content}`,
