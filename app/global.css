@@ -1,9 +1,10 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 @plugin "daisyui";
 
 ::selection {
   background-color: #47a3f3;
-  color: #fefefe;
+color: #fefefe;
 }
 
 :root {
@@ -62,7 +63,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply bg-neutral-900 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
 }
 
 .prose code {
@@ -148,4 +149,12 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+
+/* label style */
+
+.__isCategory-astro{
+  background-color: #4c97f8 ; 
+  color: white;
 }

@@ -28,16 +28,19 @@ export default async function BlogId({ params }: { params: Promise<{ slug: strin
   const blog = data.contents[0];
 
   return (
-    <main>
+    <main className='prose prose-zinc'>
       <h1>{blog.title}</h1>
-      <p>{formatToJST(blog.publishedAt)}</p>
-      <div className="">{blog.category.id}</div>
+      
+      <div className='pb-8'>
+        <span className='mr-4'>{formatToJST(blog.publishedAt)}</span>
+        <span className={"badge __isCategory-"+blog.category.id} >{blog.category.id}</span>
+      </div>
 
-      <div
+
+      <article
         dangerouslySetInnerHTML={{
           __html: `${blog.content}`,
         }}
-        className="prose prose-slate"
       />
     </main>
   );
