@@ -120,7 +120,7 @@ html {
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
+  /* margin-bottom: 1.25em !important; */
 }
 
 pre::-webkit-scrollbar {
@@ -158,3 +158,9 @@ table {
   background-color: #4c97f8 ; 
   color: white;
 }
+
+.card-actions > .badge {color:#fff;}
+
+.card-actions > .next {background-color: #0fa295;}
+.card-actions > .astro {background-color: #0f0d0d;}
+.card-actions > .headlesscms {background-color: #0f5ba2;}

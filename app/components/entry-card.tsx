@@ -6,26 +6,27 @@ export async function EntryCard() {
  
   return (
     <div>
-      <ul className="flex gap-8">
+      <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {data.contents.map((blog) => (
-            <li key={blog.slug}>
+            <li key={blog.slug} className="w-full h-full">
                 <Link href={`/blog/${blog.slug}`}>
-                    <div className="card bg-base-100 w-72 shadow-sm">
+                    <div className="card bg-base-100 w-full h-full shadow-sm">
                         <figure>
                             <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                            src={blog.eyecatch.thumbnail.url}
+                            alt={blog.category.name} />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">
                             {blog.title}
                             {/* <div className="badge badge-secondary">NEW</div> */}
                             </h2>
-                            <p className="line-clamp-2">{blog.content}</p>
                             <div className="card-actions justify-end">
-                            <div className="badge badge-outline">{blog.category.id}</div>
+                              <div className={blog.category.id + " badge items-end"}>{blog.category.id}</div>
                             </div>
                         </div>
+                        
+                        <div className="badge badge-secondary absolute top-2 left-2">NEW</div>
                     </div>
                 </Link>
             </li>

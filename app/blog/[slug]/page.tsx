@@ -28,7 +28,7 @@ export default async function BlogId({ params }: { params: Promise<{ slug: strin
   const blog = data.contents[0];
 
   return (
-    <main className='prose prose-zinc'>
+    <main className='prose prose-zinc max-w-none'>
       <h1>{blog.title}</h1>
       
       <div className='pb-8'>
