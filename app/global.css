@@ -164,3 +164,7 @@ table {
 .card-actions > .next {background-color: #0fa295;}
 .card-actions > .astro {background-color: #0f0d0d;}
 .card-actions > .headlesscms {background-color: #0f5ba2;}
+.card-actions > .js {background-color:#fc2;}
+
+blockquote {background-color:#fafafa; padding: 0.5rem 0.5rem 0.5rem 1.5rem;}
+blockquote * {font-style: normal; font-size: small;}
